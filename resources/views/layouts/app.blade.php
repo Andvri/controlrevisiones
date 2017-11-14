@@ -14,6 +14,7 @@
         <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
+    <div id="app">
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -55,8 +56,11 @@
          <div class="content">
                 @yield('content')
             </div>
+              <example-component></example-component>
             <div id="example"></div>
+                    </div>
         <!-- Scripts -->
         <script src=" {{ mix('js/app.js') }}"></script>
+
     </body>
 </html>

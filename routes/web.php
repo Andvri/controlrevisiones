@@ -14,4 +14,5 @@
 Route::get('/', function () {
     return view('welcome',[ "links" => ["https://google.com" => "google"]] );
 });
-Route::get('/solicitar_revision', 'PagesController@registro');
+Route::get('/solicitar_revision', 'RevisionsController@showregistro');
+Route::post('/solicitar_revision/create', 'RevisionsController@create');
