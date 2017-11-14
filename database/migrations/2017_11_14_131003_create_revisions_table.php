@@ -16,6 +16,12 @@ class CreateRevisionsTable extends Migration
         Schema::create('revisions', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('nota_adicional');
+            $table->boolean('revisada');
+            $table->bigInteger('evaluacion_id');
+            $table->string('integrantes');
+            //$table->json('integrantes');
+            $table->string('repositorio');
         });
     }
 
