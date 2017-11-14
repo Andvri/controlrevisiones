@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 Route::get('/solicitar_revision', 'RevisionsController@showregistro');
 Route::post('/solicitar_revision/create', 'RevisionsController@create');
+
+Auth::routes();
