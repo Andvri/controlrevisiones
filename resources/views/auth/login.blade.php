@@ -11,7 +11,7 @@
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group {{ $errors->has('email') ? ' has-danger' : '' }}">
+                        <div class="form-group {{ $errors->has('email') ? 'has-danger' : '' }}">
                             <label for="email" class="col-md-4 form-control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
