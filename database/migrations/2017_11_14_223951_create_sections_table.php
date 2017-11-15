@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRevisionsTable extends Migration
+class CreateSectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateRevisionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('revisions', function (Blueprint $table) {
+        Schema::create('sections', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('NSection');
+
+            
+            
+           // $table->foreign('subjects_id')->references('id')->on('subjects');
+          //  $table->foreign('teacher_id')->references('id')->on('users');
             $table->timestamps();
-            $table->string('nota_adicional');
-            $table->boolean('revisada');
-            $table->string('integrantes');
-            //$table->json('integrantes');
-            $table->string('repositorio');
         });
     }
 
@@ -31,6 +32,7 @@ class CreateRevisionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('revisions');
+
+        Schema::dropIfExists('sections');
     }
 }
