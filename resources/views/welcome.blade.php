@@ -5,13 +5,20 @@
 
 @endsection
 @section('content')
+    @guest
+    @else
     <div class="title m-b-md">
-        Laravel
+        {{Auth::user()->name}}
     </div>
-
-    <div class="links">
-        @foreach( $links as $link => $text)
-            <a href="{{ $link }}">{{ $text }}</a>
+    <div class="sections">
+        @foreach( Auth::user()->sections as $section)
+               {{ Auth::user()->name}}
+               {{ $section->subject->name}}
+               Seccion
+               {{ $section->NSection}} 
+            <br>
         @endforeach
-    </div> 
+    </div>
+    @endguest
+   
 @endsection
