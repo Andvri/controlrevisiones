@@ -16,8 +16,8 @@ class AddSubjectIdAndTeacherIdToSectionTable extends Migration
         Schema::table('sections', function (Blueprint $table) {
             $table->integer('subject_id')->unsigned();
             $table->foreign('subject_id')->references('id')->on('subjects');
-            $table->integer('teacher_id')->unsigned();
-            $table->foreign('teacher_id')->references('id')->on('users');      
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');      
         });
     }
 
@@ -31,8 +31,8 @@ class AddSubjectIdAndTeacherIdToSectionTable extends Migration
         Schema::table('sections', function (Blueprint $table) {
             $table->dropForeign('sections_subject_id_foreign');
             $table->dropColumn('subject_id');
-            $table->dropForeign('sections_teacher_id_foreign');
-            $table->dropColumn('teacher_id');
+            $table->dropForeign('sections_user_id_foreign');
+            $table->dropColumn('user_id');
         });
     }
 }
